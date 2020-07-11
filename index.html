@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOPWATCH BY RAHUL</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Roboto;
+            font-weight: 300;
+            background: linear-gradient(to left, #607d8b, #d459cb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .wrap{
+            display: inline-block;
+            min-width: 360px;
+            min-height: 400px;
+            padding: 50px 15px;
+            background-color: #fff;
+            box-shadow: 0px 5px 25px #0000004a;
+            border-radius: 8px;
+            text-align: center;
+        }
+        #timer{
+            position: relative;
+            width: 250px;
+            height: 250px;
+            line-height: 250px;
+            border-radius: 50%;
+            font-size: 32px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+        p{
+            font-weight: 400;
+            color: rgb(78, 76, 76);
+            padding: 30px 0px;
+        }
+        .option a{
+            display: inline-block;
+            margin: 0px 10px;
+            text-decoration: none;
+        }
+        #play,#reset{
+            width: 55px;
+            height: 55px;
+            line-height: 55px;
+            border-radius: 50px;
+            color: #fff;
+            background: linear-gradient(45deg, #ff88fd, #ff00ed);
+            box-shadow: 0px 8px 25px #bf5fc045, 0px 8px 25px #ff00ec50;
+            transition: all ease 0.1s;
+        }
+        #stop{
+            padding: 15px 20px;
+            border-radius: 50px;
+            color: #fff;
+            font-weight: 400;
+            background: linear-gradient(45deg, #607d8b, #ff00ed);
+            box-shadow: 0px 8px 25px #bf5fc045, 0px 8px 25px #ff00ec50;
+            transition: all ease 0.1s;
+        }
+        #play:active,#reset:active,#stop:active{
+            transform:scale(0.60);
+        }
+        #stop .fa{
+            margin-right: 5px;
+        }
+        .fa-play{
+            padding-left: 5px;
+        }
+        .pause .fa-play,
+        .fa-pause{
+            display:none;
+        }
+        .pause .fa-pause{
+            display: inline-block;
+        }
+        #timer svg{
+            position:absolute;
+            left: 0px;
+        } 
+        #animateCircle.addAnimation{
+            stroke-dasharray: 770;
+            stroke-dashoffset: -770;
+            animation: animateCircle 60s linear infinite;
+            animation-play-state: paused;
+        }
+        @keyframes animateCircle{
+            from{
+                stroke-dashoffset: 0;
+            }
+        }
+        .defaultCircle{
+            opacity: .5;
+        }
+        .h1{
+            color: rgb(250, 31, 31);
+            font-size: 25px;
+            margin: 5px;
+        }
+        .h2{
+            color: rgb(234, 22, 253);
+        }
+    </style>
+ <link rel="icon" href="st.jpg" type="image/gif" sizes="16x16" />
+
+</head>
+
+<body>
+    <div class="wrap">
+        <h1 class="h2">STOP WATCH</h1>
+        <h1 class="h1">ROLL NO# WM 9491</h1>
+        
+        <div id="timer">
+
+            <svg width="260" height="260">
+                <circle class="defaultCircle" cx="125" cy="125" r="120" stroke="#ff88fb" stroke-width="12" fill="none" stroke-linecap="round" />
+                <circle id="animateCircle" cx="125" cy="125" r="120" stroke="#d459cb" stroke-width="12" fill="none" stroke-linecap="round" />
+
+            </svg>
+            <span id="hour">00</span> :
+            <span id="minute">00</span> :
+            <span id="second">00</span> :
+            <span id="millisecond">00</span> 
+        </div>
+        <p>Your Time Starts Now</p>
+        <div class="option">
+            <a id="play" onclick="playFunc();" href="javascript:void(0)"><i class="fa fa-play"></i><i class="fa fa-pause"></i></a>
+            <a id="stop" onclick="stopFunc();" href="javascript:void(0)"><i class="fa fa-stop"></i>&nbsp;Stop</a>
+            <a id="reset" onclick="resetFunc();" href="javascript:void(0)"><i class="fa fa-undo"></i></a>
+        </div>
+        <h1 class="h1">&copy;  2020 || All right reserved by RAHUL ROSHAN</h1>
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
